@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocRoot>
+	<Entry>
+		<ErrorCode>1</ErrorCode>
+		<ErrorDescr>Exception calling "SetInfo" with "0" argument(s): "The account already exists.
+"</ErrorDescr>
+		<Command>create</Command>
+		<Login>sam</Login>
+	</Entry>
+	<Entry>
+		<ErrorCode>1</ErrorCode>
+		<ErrorDescr>Exception calling "SetInfo" with "0" argument(s): "The account already exists.
+"</ErrorDescr>
+		<Command>create</Command>
+		<Login>serpuh</Login>
+	</Entry>
+	<Entry>
+		<ErrorCode>1</ErrorCode>
+		<ErrorDescr>Exception calling "SetInfo" with "0" argument(s): "The account already exists.
+"</ErrorDescr>
+		<Command>create</Command>
+		<Login>rreshta</Login>
+	</Entry>
+	<Entry>
+		<ErrorCode>1</ErrorCode>
+		<ErrorDescr>Exception calling "SetInfo" with "0" argument(s): "The account already exists.
+"</ErrorDescr>
+		<Command>create</Command>
+		<Login>mockin</Login>
+	</Entry>
+</DocRoot>
+

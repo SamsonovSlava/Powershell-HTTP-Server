@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="53" UUID="f60653c0-17d9-4428-958f-d885df012656" created="Thu Jan 26 15:55:59 MSK 2017" createdBy="SBT-Samsonov-VS" main="Powershell" modified="Mon Feb 06 14:59:56 MSK 2017" modifiedBy="SBT-Samsonov-VS" project="5th week 1st task" version="7.1.1">
+    <AssemblyLine name="Powershell">
+        <ModTime>1486378775498</ModTime>
+        <Settings/>
+        <Hooks/>
+        <CheckpointConfig/>
+        <SandboxConfig/>
+        <SimulationConfig>
+            <SimulationStates>
+                <Component name="HTTPClientConnector" state="Simulated"/>
+                <Component name="FileConnector" state="Simulated"/>
+                <Component name="LDAPConnector" state="Enabled"/>
+            </SimulationStates>
+            <ProxySettings/>
+        </SimulationConfig>
+        <LogConfig/>
+        <ContainerEF name="EntryFeedContainer">
+            <ModTime>1486367714659</ModTime>
+            <Connector name="LDAPConnector">
+                <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
+                <ModTime>1486367714659</ModTime>
+                <ConnectorMode>Iterator</ConnectorMode>
+                <ConnectorState>Enabled</ConnectorState>
+                <Configuration>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <parameter name="ldapPassword">`123qwer</parameter>
+                    <parameter name="ldapSearchBase">ou=0,ou=people,erglobalid=00000000000000000000,ou=org,DC=COM</parameter>
+                    <parameter name="ldapSearchFilter">erglobalid=*</parameter>
+                    <parameter name="ldapUrl">ldap://SBT-IPO-097:1389</parameter>
+                    <parameter name="ldapUsername">cn=root</parameter>
+                </Configuration>
+                <Parser>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <AttributeMap name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486367520795</ModTime>
+                    <AttributeMapItem>
+                        <Name>*</Name>
+                        <Type>simple</Type>
+                        <Simple>*</Simple>
+                    </AttributeMapItem>
+                </AttributeMap>
+                <AttributeMap name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                </AttributeMap>
+                <DeltaSettings>
+                    <UniqueAttribute/>
+                    <WhenToCommit>After every database operation</WhenToCommit>
+                    <RowLocking>SERIALIZABLE</RowLocking>
+                    <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+                </DeltaSettings>
+                <Schema name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486367714659</ModTime>
+                    <SchemaItem>
+                        <Name>$dn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>audio</Name>
+                        <NativeSyntax>MAY/Binary/Contains a sound file in binary format.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>businessCategory</Name>
+                        <NativeSyntax>MAY/Directory String/This attribute describes the kind of business performed by an organization.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>carLicense</Name>
+                        <NativeSyntax>MAY/Directory String/vehicle license plate tag</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>cn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MUST/String/This is the X.500 commonName attribute, which contains a name of an object.  If the object corresponds to a person, it is typically the persons full name.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>departmentNumber</Name>
+                        <NativeSyntax>MAY/Directory String/identifies a department within an organization.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>description</Name>
+                        <NativeSyntax>MAY/Directory String/Attribute common to CIM and LDAP schema to provide lengthy description of a directory object entry.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>destinationIndicator</Name>
+                        <NativeSyntax>MAY/Directory String/This attribute is used for the telegram service.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>displayName</Name>
+                        <NativeSyntax>MAY/Directory String/A name used in displaying an entry in a one-line summary list.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>employeeNumber</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/Directory String/Identifies the entrys employee number.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>employeeType</Name>
+                        <NativeSyntax>MAY/Directory String/Identifies the entrys type of employment.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erAcl</Name>
+                        <NativeSyntax>MAY/Binary</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erAliases</Name>
+                        <NativeSyntax>MAY/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erAuthorizationOwner</Name>
+                        <NativeSyntax>MAY/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erCreateDate</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/Directory String/ Time when the object is created </NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erCustomDisplay</Name>
+                        <NativeSyntax>MAY/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erGlobalId</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erImageURI</Name>
+                        <NativeSyntax>MAY/Directory String/universal resource identifier of an object image</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erIsDeleted</Name>
+                        <NativeSyntax>MAY/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erLastCertifiedDate</Name>
+                        <NativeSyntax>MAY/Directory String/ Time when the object was last certified </NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erLastModifiedTime</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erLastOperation</Name>
+                        <NativeSyntax>MAY/Directory String/Available for custom use for lifecycle event</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erLastStatusChangeDate</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/Directory String/Time when the status is updated</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erLifecycleEnable</Name>
+                        <NativeSyntax>MAY/Boolean/Flag for lifecycle operation on an entity</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erLocale</Name>
+                        <NativeSyntax>MAY/Directory String/Preferred locale for a user</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erParent</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erPersonPassword</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/Binary/person account password</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erPersonStatus</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erProfileName</Name>
+                        <NativeSyntax>MAY/Directory String/Profile name of an object</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erPswdLastChanged</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erRoleAssignments</Name>
+                        <NativeSyntax>MAY/Directory String/Person Role Assignment information</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erRoleRecertificationLastAction</Name>
+                        <NativeSyntax>MAY/Directory String/Last recertification action applied to roles</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erRoleRecertificationLastActionDate</Name>
+                        <NativeSyntax>MAY/Directory String/Date that the last recertification action was applied to roles</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erRoles</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erSharedSecret</Name>
+                        <NativeSyntax>MAY/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erSupervisor</Name>
+                        <NativeSyntax>MAY/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erSynchPassword</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/Binary/Password to be used for account creation</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erURI</Name>
+                        <NativeSyntax>MAY/Directory String/universal resource identifier of an object</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>facsimileTelephoneNumber</Name>
+                        <NativeSyntax>MAY/Telephone Number/Identifies the fax number at which the entry can be reached.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>givenName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/String/Used to hold the part of a persons name which is not their surname nor middle name.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>homePhone</Name>
+                        <NativeSyntax>MAY/Telephone Number/Identifies the entrys home phone number.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>homePostalAddress</Name>
+                        <NativeSyntax>MAY/Directory String/Identifies the entrys home mailing address. This field is  intended to include multiple lines, but each line within the  entry should be separated by a dollar sign (\24). To represent  an actual dollar sign (\24) or backslash (\) within this text, use  the escaped hex values \24 and \5c respectively.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>initials</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/String/The initials attribute contains the initials of some or all of an individuals names, but not the surname(s).</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>internationalISDNNumber</Name>
+                        <NativeSyntax>MAY/IA5 String/Contains the ISDN number of the entry. This is in the internationally agreed format for ISDN addresses given in CCITT Rec. E. 164.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>jpegPhoto</Name>
+                        <NativeSyntax>MAY/Binary/Contains a JPEG photo of the entry.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>l</Name>
+                        <NativeSyntax>MAY/String/This attribute contains the name of a locality, such as a city, county or other geographic region (localityName).</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>labeledURI</Name>
+                        <NativeSyntax>MAY/Directory String/Uniform Resource Identifier with optional label as defined in RFC2079.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mail</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/Directory String/Identifies a users primary email address (the email address retrieved and displayed by white-pages lookup applications).</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>manager</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/DN/Identifies the distinguished name of the entrys manager.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mobile</Name>
+                        <NativeSyntax>MAY/Telephone Number/Identifies the entrys mobile or cellular phone number.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>o</Name>
+                        <NativeSyntax>MAY/String/This attribute contains the name of an organization (organizationName).</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectClass</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MUST/OID/The values of the objectClass attribute describe the kind of object which an entry represents.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>ou</Name>
+                        <NativeSyntax>MAY/String/This attribute contains the name of an organization (organizationName).</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>pager</Name>
+                        <NativeSyntax>MAY/Telephone Number/Identifies the entrys pager phone number.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>photo</Name>
+                        <NativeSyntax>MAY/Binary/Contains a photo, in binary form, of the entry.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>physicalDeliveryOfficeName</Name>
+                        <NativeSyntax>MAY/Directory String/Physcial delivery office number.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>postOfficeBox</Name>
+                        <NativeSyntax>MAY/Directory String/Post office box number.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>postalAddress</Name>
+                        <NativeSyntax>MAY/Directory String/Identifies the entry\27s mailing address. This field is intended to include multiple lines. When represented in LDIF format, each line should be separated by a dollar sign (\24).</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>postalCode</Name>
+                        <NativeSyntax>MAY/Directory String/Postal code.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>preferredDeliveryMethod</Name>
+                        <NativeSyntax>MAY/Directory String/Identifies the entry\27s preferred contact or delivery method.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>preferredLanguage</Name>
+                        <NativeSyntax>MAY/Directory String/A persons preferred written or spoken language</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>registeredAddress</Name>
+                        <NativeSyntax>MAY/String/This attribute contains a postal address for receiving telegrams or expedited documents. The recipient\27s signature is usually required on delivery.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>roomNumber</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/Directory String/Specifies the room number of an object. Note that the commonName attribute should be used for naming room  objects.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>secretary</Name>
+                        <NativeSyntax>MAY/DN/Identifies the entrys secretary or administrative assistant.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>seeAlso</Name>
+                        <NativeSyntax>MAY/String/Identifies another directory server entry that may contain information related to this entry.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MUST/String/This is the X.500 surname attribute, which contains the family name of a person.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>st</Name>
+                        <NativeSyntax>MAY/String/This attribute contains the full name of a state or province (stateOrProvinceName).</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>street</Name>
+                        <NativeSyntax>MAY/Directory String/This attribute contains the physical address of the object to which the entry corresponds, such as an address for package delivery (streetAddress).</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>telephoneNumber</Name>
+                        <NativeSyntax>MAY/Telephone Number/Telephone number.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>teletexTerminalIdentifier</Name>
+                        <NativeSyntax>MAY/Directory String/Teletex terminal identifier.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>telexNumber</Name>
+                        <NativeSyntax>MAY/Directory String/Telex number.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>title</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/String/This attribute contains the title, such as Vice President, of a person in their organizational context. The personalTitle attribute would be used for a persons title independent of their job function.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uid</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>MAY/Directory String/Typically a user shortname or userid.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userCertificate</Name>
+                        <NativeSyntax>MAY/Binary/Used to represent certificates from one or more Certification Authorities representing a user.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userPKCS12</Name>
+                        <NativeSyntax>MAY/Binary/PKCS \2312 PFX PDU for exchange of personal identity information</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userPassword</Name>
+                        <NativeSyntax>MAY/Binary/Holds a password value for a distinguished name.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userSMIMECertificate</Name>
+                        <NativeSyntax>MAY/Binary/Signed message used to support S/MIME</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>x121Address</Name>
+                        <NativeSyntax>MAY/IA5 String/Defines the X.121 address of the entry.</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>x500UniqueIdentifier</Name>
+                        <NativeSyntax>MAY/Binary/Used to distinguish between objects when a distinguished name has been reused. This is a different attribute type from both the uid and uniqueIdentifier types.</NativeSyntax>
+                    </SchemaItem>
+                </Schema>
+                <Schema name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486367714659</ModTime>
+                    <SchemaItem>
+                        <Name>$dn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>cn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>employeenumber</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>ercreatedate</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erglobalid</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erlastmodifiedtime</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erlaststatuschangedate</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erparent</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erpersonpassword</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erpersonstatus</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erpswdlastchanged</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erroles</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>ersynchpassword</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>givenname</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>initials</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mail</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>manager</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectclass</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>roomnumber</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>title</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uid</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                </Schema>
+                <LinkCriteria>
+                    <InheritFrom>[parent]</InheritFrom>
+                </LinkCriteria>
+                <Hooks>
+                    <InheritFrom>[parent]</InheritFrom>
+                </Hooks>
+                <CheckpointConfig/>
+                <SandboxConfig/>
+                <Reconnect>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ReconnectRules/>
+                </Reconnect>
+                <Operations/>
+                <PoolDefinition>
+                    <InheritFrom>[parent]</InheritFrom>
+                </PoolDefinition>
+                <PoolInstance/>
+            </Connector>
+        </ContainerEF>
+        <ContainerDF name="DataFlowContainer">
+            <ModTime>1486378775498</ModTime>
+            <Connector name="HTTPClientConnector">
+                <InheritFrom>system:/Connectors/ibmdi.HTTPClient</InheritFrom>
+                <ModTime>1486378775498</ModTime>
+                <ConnectorMode>CallReply</ConnectorMode>
+                <ConnectorState>Enabled</ConnectorState>
+                <Configuration>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486374284223</ModTime>
+                    <parameter name="contentType">text/xml; charset=UTF-8</parameter>
+                    <parameter name="debug">false</parameter>
+                    <parameter name="method">POST</parameter>
+                    <parameter name="url">http://localhost:8888?command=create</parameter>
+                </Configuration>
+                <Parser>
+                    <InheritFrom>system:/Parsers/ibmdi.XML2</InheritFrom>
+                    <ModTime>1486370316022</ModTime>
+                    <parameter name="characterSet">UTF-8</parameter>
+                    <parameter name="clientMode">false</parameter>
+                    <parameter name="csvQuoteAllFields">true</parameter>
+                    <parameter name="debug">true</parameter>
+                    <parameter name="headersAsProperties">false</parameter>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <AttributeMap name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486378049938</ModTime>
+                    <AttributeMapItem>
+                        <Name>ErrorCode</Name>
+                        <Type>advanced</Type>
+                        <Script>conn["ErrorCode"]</Script>
+                        <Simple>ErrorCode</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>ErrorDescr</Name>
+                        <Type>advanced</Type>
+                        <Script>conn["ErrorDescr"]</Script>
+                        <Simple>ErrorDescr</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>fullName</Name>
+                        <Type>advanced</Type>
+                        <Script>conn["fullName"]</Script>
+                        <Simple>fullName</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>title</Name>
+                        <Type>advanced</Type>
+                        <Script>conn["title"]</Script>
+                        <Simple>title</Simple>
+                    </AttributeMapItem>
+                </AttributeMap>
+                <AttributeMap name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486378775498</ModTime>
+                    <AttributeMapItem>
+                        <Name>cn</Name>
+                        <Type>simple</Type>
+                        <Simple>cn</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>command</Name>
+                        <Type>advanced</Type>
+                        <Script>work.command = "find"</Script>
+                        <Simple>command</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>givenName</Name>
+                        <Type>simple</Type>
+                        <Simple>givenName</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>sn</Name>
+                        <Type>simple</Type>
+                        <Simple>sn</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>title</Name>
+                        <Type>simple</Type>
+                        <Simple>title</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>uid</Name>
+                        <Type>simple</Type>
+                        <Simple>uid</Simple>
+                    </AttributeMapItem>
+                </AttributeMap>
+                <DeltaSettings/>
+                <Schema name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486375262804</ModTime>
+                    <SchemaItem>
+                        <Name>Content-Length</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>Date</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>Property</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>body</Name>
+                        <Syntax>java.lang.StringBuffer</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bodyAsBytes</Name>
+                        <Syntax>[B</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bodyAsString</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>http</Name>
+                        <Syntax>com.ibm.di.entry.Attribute</Syntax>
+                        <SchemaItem>
+                            <Name>Server</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>responseMsg</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>responseCode</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Date</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Content-Type</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Content-Length</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>bodyAsString</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>bodyAsBytes</Name>
+                            <Syntax>[B</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>body</Name>
+                            <Syntax>java.lang.StringBuffer</Syntax>
+                            <SchemaItem>
+                                <Name>response</Name>
+                                <Syntax>java.lang.StringBuffer</Syntax>
+                            </SchemaItem>
+                        </SchemaItem>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>response</Name>
+                        <Syntax>java.lang.StringBuffer</Syntax>
+                    </SchemaItem>
+                </Schema>
+                <Schema name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486375262804</ModTime>
+                    <SchemaItem>
+                        <Name>Content-Length</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>Date</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>Property</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>body</Name>
+                        <Syntax>java.lang.StringBuffer</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bodyAsBytes</Name>
+                        <Syntax>[B</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bodyAsString</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>http</Name>
+                        <Syntax>com.ibm.di.entry.Attribute</Syntax>
+                        <SchemaItem>
+                            <Name>Server</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>responseMsg</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>responseCode</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Date</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Content-Type</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Content-Length</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>bodyAsString</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>bodyAsBytes</Name>
+                            <Syntax>[B</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>body</Name>
+                            <Syntax>java.lang.StringBuffer</Syntax>
+                            <SchemaItem>
+                                <Name>response</Name>
+                                <Syntax>java.lang.StringBuffer</Syntax>
+                            </SchemaItem>
+                        </SchemaItem>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>response</Name>
+                        <Syntax>java.lang.StringBuffer</Syntax>
+                    </SchemaItem>
+                </Schema>
+                <LinkCriteria>
+                    <InheritFrom>[parent]</InheritFrom>
+                </LinkCriteria>
+                <Hooks>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486377982397</ModTime>
+                    <Hook name="addonly_ok">
+                        <InheritFrom>[no inheritance]</InheritFrom>
+                        <Name>addonly_ok</Name>
+                        <Script><![CDATA[var body = conn.get("http.body").getTextContent();
+
+task.logmsg(body)]]></Script>
+                        <Enabled>true</Enabled>
+                    </Hook>
+                    <Hook name="before_call">
+                        <InheritFrom>[no inheritance]</InheritFrom>
+                        <ModTime>1486377691798</ModTime>
+                        <Name>before_call</Name>
+                        <Script><![CDATA[task.logmsg("[Отправлен запрос:]");
+task.logmsg("Command: " + work["command"]);
+task.logmsg("UID: " + work["uid"]);]]></Script>
+                        <Enabled>true</Enabled>
+                    </Hook>
+                    <Hook name="before_initialize">
+                        <Name>before_initialize</Name>
+                        <Enabled>false</Enabled>
+                    </Hook>
+                    <Hook name="callreply_ok">
+                        <InheritFrom>[no inheritance]</InheritFrom>
+                        <ModTime>1486377982397</ModTime>
+                        <Name>callreply_ok</Name>
+                        <Script><![CDATA[task.logmsg("[Получен ответ:]");
+var errorCode = work && work["ErrorCode"] ? work["ErrorCode"] : null;
+var errorDescr = work && work["errorDescr"] ? work["errorDescr"] : null;
+var fullName = work && work["fullName"] ? work["fullName"] : null;
+var title = work && work["title"] ? work["title"] : null;
+task.logmsg("Error code: " + errorCode);
+task.logmsg("Error description: " + errorDescr);
+task.logmsg("Full name: " + fullName);
+
+task.logmsg("Title: " + title);
+
+task.logmsg("----------------------------------------------------------");]]></Script>
+                        <Enabled>true</Enabled>
+                    </Hook>
+                </Hooks>
+                <CheckpointConfig/>
+                <SandboxConfig/>
+                <Reconnect>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ReconnectRules/>
+                </Reconnect>
+                <Operations/>
+                <PoolDefinition>
+                    <InheritFrom>[parent]</InheritFrom>
+                </PoolDefinition>
+                <PoolInstance/>
+            </Connector>
+            <Connector name="FileConnector">
+                <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
+                <ModTime>1486378613172</ModTime>
+                <ConnectorMode>AddOnly</ConnectorMode>
+                <ConnectorState>Enabled</ConnectorState>
+                <Configuration>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486370828912</ModTime>
+                    <parameter name="filePath">C:\Локальные документы\Проекты\PowershellHTTPServer\report.xml</parameter>
+                </Configuration>
+                <Parser>
+                    <InheritFrom>system:/Parsers/ibmdi.XML2</InheritFrom>
+                    <ModTime>1486375631634</ModTime>
+                    <parameter name="characterSet">UTF-8</parameter>
+                    <parameter name="debug">true</parameter>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1486370796773</ModTime>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1486370796773</ModTime>
+                    </Schema>
+                </Parser>
+                <AttributeMap name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486370796773</ModTime>
+                </AttributeMap>
+                <AttributeMap name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486378613172</ModTime>
+                    <AttributeMapItem>
+                        <Name>Command</Name>
+                        <Type>simple</Type>
+                        <Simple>Command</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>ErrorCode</Name>
+                        <Type>simple</Type>
+                        <Simple>ErrorCode</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>ErrorDescr</Name>
+                        <Type>simple</Type>
+                        <Simple>ErrorDescr</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>Login</Name>
+                        <Type>advanced</Type>
+                        <Script>work.uid</Script>
+                        <Simple>Login</Simple>
+                    </AttributeMapItem>
+                </AttributeMap>
+                <DeltaSettings/>
+                <Schema name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486370796773</ModTime>
+                </Schema>
+                <Schema name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486370796773</ModTime>
+                </Schema>
+                <LinkCriteria>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486370796773</ModTime>
+                </LinkCriteria>
+                <Hooks>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1486370796773</ModTime>
+                </Hooks>
+                <CheckpointConfig/>
+                <SandboxConfig/>
+                <Reconnect>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ReconnectRules/>
+                </Reconnect>
+                <Operations/>
+                <PoolDefinition>
+                    <InheritFrom>[parent]</InheritFrom>
+                </PoolDefinition>
+                <PoolInstance/>
+            </Connector>
+        </ContainerDF>
+        <ThreadOptions/>
+        <Operations/>
+        <InitParams>
+            <Schema name="AssemblyLineInitParams"/>
+        </InitParams>
+    </AssemblyLine>
+</MetamergeConfig>
